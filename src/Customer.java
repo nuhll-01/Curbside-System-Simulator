@@ -1,19 +1,19 @@
 
 public class Customer extends Person {
 
-    private String customerAddress;
-    private String customerEmail;
-    private long customerPhoneNumber;
+    private String address;
+    private String email;
+    private long number;
 
     public Customer() {
         super();
     }
 
-    public Customer(String name, String address, String email, long phoneNumber) {
-        super(name);
-        this.customerAddress = address;
-        this.customerEmail = email;
-        this.customerPhoneNumber = phoneNumber;
+    public Customer(String firstName, String lastName, String address, String email, long phoneNumber) {
+        super(firstName, lastName);
+        this.address = address;
+        this.email = email;
+        this.number = phoneNumber;
     }
 
     public String getName() {
@@ -21,15 +21,15 @@ public class Customer extends Person {
     }
 
     public String getAddress() {
-        return this.customerAddress;
+        return this.address;
     }
 
     public String getEmail() {
-        return this.customerEmail;
+        return this.email;
     }
 
     public long getPhoneNumber() {
-        return this.customerPhoneNumber;
+        return this.number;
     }
 
     public void displayCustomerDetails() {

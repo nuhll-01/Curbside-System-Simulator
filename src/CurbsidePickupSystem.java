@@ -1,27 +1,30 @@
 import java.util.ArrayList;
 
 public class CurbsidePickupSystem extends Customer {
-    private ArrayList<Customer> customer = new ArrayList<>(); // ArrayList of customers.
-    private ArrayList<Integer> orderNumber = new ArrayList<>(); // ArrayList of order numbers.
-    private Items item = new Items();
+    public final ArrayList<Customer> customer = new ArrayList<>(); // ArrayList of customers.
+    private final ArrayList<Integer> orderNumber = new ArrayList<>(); // ArrayList of order numbers.
+    private final Items item = new Items();
 
     public CurbsidePickupSystem() {
         super();
     }
 
-    public void search(int x) {
-        getOrder();
-        ArrayList<Customer> customers = this.customer;
+    // Search for an order number
+    public void search(int number) {
+        orderNumbers();
         for (int i = 0; i < orderNumber.size(); i++) {
-            if (orderNumber.get(i) == x) {
+            if (number == orderNumber.get(i)) {
                 displayDetails(i);
             }
         }
     }
 
-    public void getOrder() {
+    public void orderNumbers() {
         orderNumber.add(9564);
         orderNumber.add(4128);
+        orderNumber.add(5078);
+        orderNumber.add(3455);
+        orderNumber.add(6589);
     }
 
     public void addCustomer(Customer customer) {
