@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 
 public class CurbsidePickupSystem extends Customer {
-    public final ArrayList<Customer> customer = new ArrayList<>(); // ArrayList of customers.
+
+    private final ArrayList<Customer> customer = new ArrayList<>(); // ArrayList of customers.
     private final ArrayList<Integer> orderNumber = new ArrayList<>(); // ArrayList of order numbers.
     private final Items item = new Items();
+    Customer customerEntity = new Customer();
 
     public CurbsidePickupSystem() {
         super();
@@ -27,20 +29,29 @@ public class CurbsidePickupSystem extends Customer {
         orderNumber.add(6589);
     }
 
-    public void addCustomer(Customer customer) {
-        this.customer.add(customer);
-    }
-
     public void displayDetails(int index) {
+        listOfCustomers();
         System.out.println("""
                                 
                 ORDER SUMMARY:
                 --------------""");
         System.out.println("\nOrder Number: " + orderNumber.get(index));
-        ArrayList<Customer> customers = this.customer;
-        Customer customer = customers.get(index); // Utilization of a "for-each" loop.
-        customer.displayCustomerDetails();
+        customerEntity = getCustomer(index);
+        customerEntity.displayCustomerDetails();
         item.displayDetails(index);
+    }
+
+    private void listOfCustomers() {
+        customer.add(new Customer("Luis", "Ramirez", "5555 S 10th St",
+                "WadzWorth53@domain.com", 5553322244L));
+        customer.add(new Customer("Bob", "Pickle", "5555 S 63rd St",
+                "pickle555@domain.com", 5551112233L));
+        customer.add(new Customer("Erin", "Nut", "5555 s 75th St",
+                "Erin53@example.com", 5553337575L));
+    }
+
+    public Customer getCustomer(int index) {
+        return customer.get(index);
     }
 
     public void exit() {
