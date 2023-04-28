@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 
-public class CurbsidePickupSystem extends Customer {
+public class CurbsidePickupSystem extends CustomerInformation {
 
-    private final ArrayList<Customer> customer = new ArrayList<>(); // ArrayList of customers.
     private final ArrayList<Integer> orderNumber = new ArrayList<>(); // ArrayList of order numbers.
     private final Items item = new Items();
     Customer customerEntity = new Customer();
@@ -30,29 +29,17 @@ public class CurbsidePickupSystem extends Customer {
     }
 
     public void displayDetails(int index) {
-        listOfCustomers();
+        super.listOfCustomers();
         System.out.println("""
                                 
                 ORDER SUMMARY:
                 --------------""");
         System.out.println("\nOrder Number: " + orderNumber.get(index));
-        customerEntity = getCustomer(index);
+        customerEntity = super.getCustomer(index);
         customerEntity.displayCustomerDetails();
         item.displayDetails(index);
     }
 
-    private void listOfCustomers() {
-        customer.add(new Customer("Luis", "Ramirez", "5555 S 10th St",
-                "WadzWorth53@domain.com", 5553322244L));
-        customer.add(new Customer("Bob", "Pickle", "5555 S 63rd St",
-                "pickle555@domain.com", 5551112233L));
-        customer.add(new Customer("Erin", "Nut", "5555 s 75th St",
-                "Erin53@example.com", 5553337575L));
-    }
-
-    public Customer getCustomer(int index) {
-        return customer.get(index);
-    }
 
     public void exit() {
         System.exit(0);
