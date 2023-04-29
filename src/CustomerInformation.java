@@ -10,6 +10,8 @@ public class CustomerInformation extends Customer {
                 "pickle555@domain.com", 5551112233L));
         customer.add(new Customer("Erin", "Nut", "5555 s 75th St",
                 "Erin53@example.com", 5553337575L));
+        customer.add(new Customer("Toby", "Myers", "5555 s 24th St",
+                "Myers71@example.com", 5554445407L));
     }
 
     public Customer getCustomer(int index) {

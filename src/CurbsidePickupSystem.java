@@ -1,31 +1,25 @@
-import java.util.ArrayList;
+/* The main class behind the concept of the program.
+This class is meant to model a very basic curbside pickup system
+The class introduces the main method that I've created - the "search" method. */
 
 public class CurbsidePickupSystem extends CustomerInformation {
 
-    private final ArrayList<Integer> orderNumber = new ArrayList<>(); // ArrayList of order numbers.
-    private final Items item = new Items();
-    Customer customerEntity = new Customer();
+    private final Items item = new Items(); // Items Object
+    Customer customerEntity = new Customer(); // Customer Object
+    orderNumbers customerOrderNumber = new orderNumbers(); // OrderNumber Object
 
     public CurbsidePickupSystem() {
         super();
     }
 
-    // Search for an order number
-    public void search(int number) {
-        orderNumbers();
-        for (int i = 0; i < orderNumber.size(); i++) {
-            if (number == orderNumber.get(i)) {
+    public void search(int orderNumber) {
+        // Calling the list of order numbers to allow the search method to iterate through the list.
+        customerOrderNumber.setOrderNumber();
+        for (int i = 0; i < customerOrderNumber.getSize(); i++) {
+            if (orderNumber == customerOrderNumber.getOrder(i)) {
                 displayDetails(i);
             }
         }
-    }
-
-    public void orderNumbers() {
-        orderNumber.add(9564);
-        orderNumber.add(4128);
-        orderNumber.add(5078);
-        orderNumber.add(3455);
-        orderNumber.add(6589);
     }
 
     public void displayDetails(int index) {
@@ -34,12 +28,11 @@ public class CurbsidePickupSystem extends CustomerInformation {
                                 
                 ORDER SUMMARY:
                 --------------""");
-        System.out.println("\nOrder Number: " + orderNumber.get(index));
+        System.out.println("\nOrder Number: " + customerOrderNumber.getOrder(index));
         customerEntity = super.getCustomer(index);
         customerEntity.displayCustomerDetails();
         item.displayDetails(index);
     }
-
 
     public void exit() {
         System.exit(0);

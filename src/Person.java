@@ -14,16 +14,18 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public String getFirstName() {
-        return this.firstName;
-    }
+    // Possible backup methods
 
-    public String getLastName() {
-        return this.lastName;
-    }
+    // public String getFirstName() { return this.firstName; }
+
+    // public String getLastName() { return this.lastName; }
 
     @Override
     public String toString() {
         return firstName + " " + lastName;
     }
+
+
+
+
 }
