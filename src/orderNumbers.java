@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class orderNumbers {
-
     private final ArrayList<Integer> orderNumber = new ArrayList<>(); // ArrayList of order numbers.
 
     protected void setOrderNumber() {
@@ -10,6 +9,7 @@ public class orderNumbers {
         orderNumber.add(507898);
         orderNumber.add(345511);
         orderNumber.add(658901);
+        orderNumber.add(123456);
     }
 
     public int getSize() {
@@ -19,5 +19,4 @@ public class orderNumbers {
     public int getOrder(int index) {
         return orderNumber.get(index);
     }
-
 }
