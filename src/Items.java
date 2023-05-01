@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Items {
-
     private ArrayList<String> items = new ArrayList<>();
     private ArrayList<Double> price = new ArrayList<>();
 
