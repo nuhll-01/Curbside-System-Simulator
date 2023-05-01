@@ -12,13 +12,13 @@ public class CurbsidePickupDriver {
         // Which essentially runs the main task of simulating a simple but "real life" curbside pickup system.
         CurbsidePickupSystem curbsidePickupSystem = new CurbsidePickupSystem(); // CurbsidePickupSystem Object
 
-
         boolean tryAgain = true;
+
         System.out.println("Welcome to the Toasty Hardware shop!");
         System.out.println("----------------------------------");
 
         while (tryAgain) {
-            int userInput = -1; // set default value to -1
+            int userInput;
             try {
                 do {
                     System.out.print("Menu - Search Order --> 1 | Exit  --> 2 |: ");
