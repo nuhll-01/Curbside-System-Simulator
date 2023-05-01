@@ -1,15 +1,14 @@
-
+// Simple class to represent a customer.
 public class Customer extends Person {
-
     private String address;
     private String email;
-    private long number;
+    private String number;
 
     public Customer() {
         super();
     }
 
-    public Customer(String firstName, String lastName, String address, String email, long phoneNumber) {
+    public Customer(String firstName, String lastName, String address, String email, String phoneNumber) {
         super(firstName, lastName);
         this.address = address;
         this.email = email;
@@ -28,7 +27,7 @@ public class Customer extends Person {
         return this.email;
     }
 
-    public long getPhoneNumber() {
+    public String getPhoneNumber() {
         return this.number;
     }
 
