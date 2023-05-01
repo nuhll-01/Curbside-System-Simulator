@@ -1,17 +1,33 @@
 import java.util.ArrayList;
 
 public class CustomerInformation extends Customer {
+    FirstName firstName = new FirstName();
+    LastName lastName = new LastName();
     private final ArrayList<Customer> customer = new ArrayList<>(); // ArrayList of customers.
 
     protected void listOfCustomers() {
-        customer.add(new Customer("Luis", "Ramirez", "5555 S 10th St",
-                "WadzWorth53@domain.com", 5553322244L));
-        customer.add(new Customer("Bob", "Pickle", "5555 S 63rd St",
-                "pickle555@domain.com", 5551112233L));
-        customer.add(new Customer("Erin", "Nut", "5555 s 75th St",
-                "Erin53@example.com", 5553337575L));
-        customer.add(new Customer("Toby", "Myers", "5555 s 24th St",
-                "Myers71@example.com", 5554445407L));
+        customer.add(new Customer(firstName.getRandomName(), lastName.getRandomName(), "5555 S 10th St",
+                "WadzWorth53@domain.com", getPhoneNumber()));
+        customer.add(new Customer(firstName.getRandomName(), lastName.getRandomName(), "5555 S 63rd St",
+                "pickle555@domain.com", getPhoneNumber()));
+        customer.add(new Customer(firstName.getRandomName(), lastName.getRandomName(), "5555 s 75th St",
+                "Erin53@example.com", getPhoneNumber()));
+        customer.add(new Customer(firstName.getRandomName(), lastName.getRandomName(), "5555 s 24th St",
+                "Myers71@example.com", getPhoneNumber()));
+        customer.add(new Customer(firstName.getRandomName(), lastName.getRandomName(), "5555 s 56th St",
+                "Jose53@example", getPhoneNumber()));
+    }
+
+    // This method generates a random phone number.
+    private String randomPhoneNumber() {
+        int digitLength = 10; // Max length of the phone number.
+        long generateNumber = (long) (Math.random() * Math.pow(10, digitLength)); // Generates a random number.
+        String generatedNumber = String.valueOf(generateNumber); // Converts the long to a string.
+        return generatedNumber.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3"); // Formats the string.
+    }
+
+    public String getPhoneNumber() {
+        return randomPhoneNumber();
     }
 
     public Customer getCustomer(int index) {
