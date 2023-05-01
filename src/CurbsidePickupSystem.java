@@ -3,7 +3,6 @@ This class is meant to model a very basic curbside pickup system
 The class introduces the main method that I've created - the "search" method. */
 
 public class CurbsidePickupSystem extends CustomerInformation {
-
     private final Items item = new Items(); // Items Object
     Customer customerEntity = new Customer(); // Customer Object
     orderNumbers customerOrderNumber = new orderNumbers(); // OrderNumber Object
