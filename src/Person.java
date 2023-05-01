@@ -1,5 +1,4 @@
 public class Person {
-
     private final String firstName;
     private final String lastName;
 
@@ -24,8 +23,4 @@ public class Person {
     public String toString() {
         return firstName + " " + lastName;
     }
-
-
-
-
 }
