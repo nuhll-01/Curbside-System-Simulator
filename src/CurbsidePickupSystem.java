@@ -24,7 +24,7 @@ public class CurbsidePickupSystem extends CustomerInformation {
     public void displayDetails(int index) {
         super.listOfCustomers();
         System.out.println("""
-                                
+                \n--------------
                 ORDER SUMMARY:
                 --------------""");
         System.out.println("\nOrder Number: " + customerOrderNumber.getOrder(index));
