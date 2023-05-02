@@ -12,20 +12,26 @@ public class CurbsidePickupDriver {
         // Which essentially runs the main task of simulating a simple but "real life" curbside pickup system.
         CurbsidePickupSystem curbsidePickupSystem = new CurbsidePickupSystem(); // CurbsidePickupSystem Object
 
+        int userInput, orderNumber;
         boolean tryAgain = true;
-
         System.out.println("Welcome to the Toasty Hardware shop!");
-        System.out.println("----------------------------------");
+        System.out.println("------------------------------------");
 
         while (tryAgain) {
-            int userInput;
             try {
                 do {
                     System.out.print("Menu - Search Order --> 1 | Exit  --> 2 |: ");
                     userInput = stdIn.nextInt();
                     if (userInput == 1) {
                         System.out.print("Search Order Number: ");
-                        curbsidePickupSystem.search(stdIn.nextInt());
+                        orderNumber = stdIn.nextInt();
+                        for (int i = 0; i < 1; i++) {
+                            System.out.println("\nSearching...");
+                            Thread.sleep(1000);
+                            System.out.println("Retrieving Order...");
+                            Thread.sleep(1000);
+                        }
+                        curbsidePickupSystem.search(orderNumber);
                     } else if (userInput == 2) {
                         curbsidePickupSystem.exit();
                     } else {
@@ -36,6 +42,8 @@ public class CurbsidePickupDriver {
             } catch (InputMismatchException inputMismatchException) {
                 System.out.println("Invalid Input." + "\n");
                 stdIn.next(); // consume the invalid input
+            } catch (InterruptedException interruptedException) {
+                throw new RuntimeException(interruptedException);
             }
         }
     }
