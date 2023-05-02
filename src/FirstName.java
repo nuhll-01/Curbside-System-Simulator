@@ -21,12 +21,12 @@ public class FirstName {
             "Tessa"
     };
 
-    public String[] getAllNames() {
-        return NAMES;
-    }
-
-    public String getRandomName() {
+    public String generateRandomName() {
         int index = (int) (Math.random() * NAMES.length);
         return NAMES[index];
+    }
+
+    private String[] getAllNames() {
+        return NAMES;
     }
 }
