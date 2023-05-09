@@ -5,12 +5,10 @@ import java.util.Scanner;
 
 public class CurbsidePickupDriver {
     public static void main(String[] args) {
-
-        Scanner stdIn = new Scanner(System.in);
-
         // Down below is the utilization object for the primary CurbsidePickupSystem class
         // Which essentially runs the main task of simulating a simple but "real life" curbside pickup system.
         CurbsidePickupSystem curbsidePickupSystem = new CurbsidePickupSystem(); // CurbsidePickupSystem Object
+        Scanner stdIn = new Scanner(System.in);
 
         int userInput, orderNumber;
         boolean tryAgain = true;
