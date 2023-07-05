@@ -23,7 +23,7 @@ public class CustomerInformation extends Customer {
                 getEmail(firstName.toLowerCase()), getPhoneNumber()));
     }
 
-    // This method generates a random phone number.
+    // Generates a random number.
     private @NotNull String randomPhoneNumber() {
         int digitLength = 10; // Max length of the phone number.
         long generateNumber = (long) (Math.random() * Math.pow(10, digitLength)); // Generates a random number.
@@ -79,12 +79,12 @@ public class CustomerInformation extends Customer {
             "Davis",
     };
 
-    public @NotNull String generateFName() {
+    private @NotNull String generateFName() {
         int index = (int) (Math.random() * FIRST_NAMES.length);
         return FIRST_NAMES[index];
     }
 
-    public @NotNull String generateLName() {
+    private @NotNull String generateLName() {
         int index = (int) (Math.random() * LAST_NAMES.length);
         return LAST_NAMES[index];
     }
@@ -103,7 +103,7 @@ public class CustomerInformation extends Customer {
         return FIRST_NAMES;
     }
 
-    public String[] getAllLastNames() {
+    private String[] getAllLastNames() {
         return LAST_NAMES;
     }
 }
