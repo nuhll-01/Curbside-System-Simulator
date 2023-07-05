@@ -3,19 +3,18 @@ This class is meant to model a very basic curbside pickup system
 The class introduces the main method that I've created - the "search" method. */
 
 public class CurbsidePickupSystem extends CustomerInformation {
-    private final Items item = new Items(); // Items Object
-    Customer customerEntity = new Customer(); // Customer Object
-    orderNumbers customerOrderNumber = new orderNumbers(); // OrderNumber Object
+    private final Items ITEM = new Items(); // Represents the item
+    Customer customer = new Customer(); // Represents the customer
+    OrderNumber orderNumber = new OrderNumber(); // OrderNumber Object
 
     public CurbsidePickupSystem() {
         super();
     }
 
-    public void search(int orderNumber) {
-        // Calling the list of order numbers to allow the search method to iterate through the list.
-        customerOrderNumber.setOrderNumber();
-        for (int i = 0; i < customerOrderNumber.getSize(); i++) {
-            if (orderNumber == customerOrderNumber.getOrder(i)) {
+    public void search(int key) {
+        importElements();
+        for (int i = 0; i < orderNumber.getSize(); i++) {
+            if (key != orderNumber.getOrder(i)) {
                 displayDetails(i);
             }
         }
@@ -27,10 +26,14 @@ public class CurbsidePickupSystem extends CustomerInformation {
                 \n--------------
                 ORDER SUMMARY:
                 --------------""");
-        System.out.println("\nOrder Number: " + customerOrderNumber.getOrder(index));
-        customerEntity = super.getCustomer(index);
-        customerEntity.displayCustomerDetails();
-        item.displayDetails(index);
+        System.out.println("\nOrder Number: " + orderNumber.getOrder(index));
+        customer = super.getCustomer(index);
+        customer.displayCustomerDetails();
+        ITEM.displayDetails(index);
+    }
+
+    private void importElements() {
+        orderNumber.getNumber(); // Brings elements into scope from OrderNumber.java class file.
     }
 
     public void exit() {
