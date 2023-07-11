@@ -13,12 +13,14 @@ public class Items {
         items.add("52 in. W x 21.5 in. D Heavy Duty 15-Drawer Combination Rolling Tool Chest Top Tool Cabinet " +
                 "with LED Light in Matte Black");
         items.add("SHOCKWAVE IMPACT DUTY Titanium Drill Bit Set (23-Piece)");
+        items.add("Indoor Fogger Insect Killer Aerosol (6-Count)");
     }
 
     public void addPrices() {
         price.add(12.99);
         price.add(999.99);
         price.add(24.99);
+        price.add(13.97);
     }
 
     public void displayDetails(int index) {
